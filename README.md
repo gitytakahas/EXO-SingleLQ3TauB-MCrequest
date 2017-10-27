@@ -1,6 +1,7 @@
 # EXO-SingleLQ3TauB-MCrequest
 
 s-{mass} : s-channel process
+
 t-{mass} : t-channel process
 
 The production of the sample is baed on the recipes from theorist. 
@@ -10,7 +11,7 @@ The production of the sample is baed on the recipes from theorist.
 1. Install latest Madgraph
 https://launchpad.net/mg5amcnlo
 
-2. copy UFO model (the one from Admir) under MG5_aMC_v2_6_0/models directory
+2. copy UFO model (the one in "model" directory) under MG5_aMC_v2_6_0/models directory
 
 3. preparation 
 
@@ -36,7 +37,7 @@ define similar thing to the anti-LQ,
 or 
 > add process p p > r23~ ta+ , (r23~ > b~ ta-)
 
-(For DY-like process, do, p p > ta+ ta- NP=2 QED=0)
+(For t-channel process, do, p p > ta+ ta- NP=2 QED=0 not to activate QED vertices)
 
 then, 
 
@@ -53,9 +54,12 @@ You should now see “SingleLQ” directory created
 [4-1] edit "SingleLQ/Cards/param_card.dat” directory 
 
 redefine parameter y1, y2 and y3. The meaning of this coupling constant is, 
-y1: LQ couples to d + e
-y2: LQ couples to s + mu
-y3: LQ couples to b + tau
+
+> y1: LQ couples to d + e
+
+> y2: LQ couples to s + mu
+
+> y3: LQ couples to b + tau
 
 It is in the unit of GeV. For example, you can set y3 = 1, y1 = y2 = 0
 to allow LQ only decays into tau + b
