@@ -24,7 +24,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(2000)
+    input = cms.untracked.int32(100)
 )
 
 # Input source
@@ -73,6 +73,25 @@ process.generator = cms.EDFilter("Pythia8GeneratorFilter",
     maxeventsToPrint = cms.untracked.int32(10),
     PythiaParameters = cms.PSet(
         processParameters = cms.vstring(
+	    'Main:timesAllowErrors = 10000',
+            'ParticleDecays:limitTau0 = off',
+            'ParticleDecays:tau0Max = 10',
+            'Tune:ee 3',
+            'Tune:pp 5',
+            'SpaceShower:pTmaxMatch = 1',
+            'SpaceShower:pTmaxFudge = 1',
+            'SpaceShower:MEcorrections = off',
+            'TimeShower:pTmaxMatch = 1',
+            'TimeShower:pTmaxFudge = 1',
+            'TimeShower:MEcorrections = off',
+            'TimeShower:globalRecoil = on',
+            'TimeShower:limitPTmaxGlobal = on',
+            'TimeShower:nMaxGlobalRecoil = 1',
+            'TimeShower:globalRecoilMode = 2',
+            'TimeShower:nMaxGlobalBranch = 1',
+            'Check:epTolErr = 0.01',
+            'SLHA:keepSM = on',
+            'SLHA:minMassSM = 10.',
 	    'LeptoQuark:all = off',
 	    'LeptoQuark:qg2LQl = on', 
             '6:m0 = 172.5 ! top mass', 
